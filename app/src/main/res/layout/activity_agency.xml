@@ -5,19 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgencyActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="-1dp">
+    tools:context=".DocumentsActivity">
 
     <TextView
-        android:id="@+id/AgencyTitle"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        android:text="@+id/AgenciesString"
-        android:textSize="30sp"
-        android:typeface="normal"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="30dp" />
-
+        android:text="These are THE AGENCIES"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
