@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="1000dp"
+        android:height="1000dp">
+        <bitmap
+            android:src="@drawable/home_nav"
+            android:antialias="true"
+            android:gravity="top"
+            />
+    </item>
+</layer-list>

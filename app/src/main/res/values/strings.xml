@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">DokyuDash</string>
-    <string name="AppName">DokyuDash</string>
+    <string name="app_name">DocuDash</string>
+    <string name="AppName">DocuDash</string>
     <string name="AgencyButton">Agency</string>
     <string name="TransactionButton">Transaction</string>
-    <string name="DocumentsButton">YourDocuments</string>
+    <string name="DocumentsButton">My\nDocuments</string>
     <string name="HistoryButton">History</string>
     <string name="AgenciesString">Agencies</string>
 </resources>

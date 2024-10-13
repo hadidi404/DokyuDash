@@ -15,15 +15,14 @@
         android:src="@drawable/dict"/>
 
     <TextView
+        android:id="@+id/recycleDetailText"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:id="@+id/recycleDetailText"
-        android:gravity="center_vertical"
         android:layout_below="@+id/recycleDetailImage"
+        android:layout_marginTop="97dp"
+        android:gravity="center_vertical"
         android:text="Place Holder"
-        android:textSize="30sp"
-        android:layout_centerHorizontal="true"/>
-
+        android:textSize="30sp" />
 
 
 </RelativeLayout>

@@ -1,12 +1,15 @@
 package com.example.dokyudashprototype
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
+import android.widget.LinearLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +24,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         // Set up the button to navigate to the AgencyActivity
         val agencyButton: Button = findViewById(R.id.agency_button)
         agencyButton.setOnClickListener {
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, HistoryActivity::class.java)
             startActivity(intent) // Start the AgencyActivity
         }
+        // Inside your Activity or Fragment
+
+
+
 
     }
 }
