@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dokyudashprototype.Recycling;
+
 import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder>
@@ -60,14 +62,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         }
 
         @Override
-        public void onClick(View view)
-        {
-            onItemListener.onItemClick(getAdapterPosition());
+        public void onClick(View view) {
+            String agencyName = recycleText.getText().toString();  // Get the agency name from TextView
+            onItemListener.onItemClick(agencyName);  // Pass the agency name to onItemClick
         }
     }
 
-    public interface OnItemListener
-    {
-        void onItemClick(int position);
+    public interface OnItemListener {
+        void onItemClick(String name);
     }
+
 }

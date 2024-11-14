@@ -1,49 +1,34 @@
 package com.example.dokyudashprototype;
 
-public class Recycling
-{
+public class Recycling {
     private String id;
     private String name;
-    private int image;
-    private String type;
+    private int imageResourceId;
+    private String material;
+    private double latitude;
+    private double longitude;
 
-    public Recycling(String id, String name, int image, String type)
-    {
+    public Recycling(String id, String name, int imageResourceId, String material, double latitude, double longitude) {
         this.id = id;
         this.name = name;
-        this.image = image;
-        this.type = type;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        this.imageResourceId = imageResourceId;
+        this.material = material;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getImage() {
-        return image;
+        return imageResourceId;
+    }
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public double getLongitude() {
+        return longitude;
     }
 }
+

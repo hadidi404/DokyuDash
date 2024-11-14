@@ -2,6 +2,7 @@ package com.example.dokyudashprototype;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class DetailActivity extends AppCompatActivity
     private void getRecycling()
     {
         Intent prevIntent = getIntent();
-        int position = prevIntent.getIntExtra("position",0);
+        int position = prevIntent.getIntExtra("position", 0);
         selectedRecycling = AgencyActivity.recyclingArrayList.get(position);
         recycleImage.setImageResource(selectedRecycling.getImage());
         recycleText.setText(selectedRecycling.getName());
