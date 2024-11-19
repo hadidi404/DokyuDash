@@ -100,6 +100,7 @@ public class AgencyActivity extends AppCompatActivity implements RecycleAdapter.
             intent.putExtra("name", selectedAgency.getName());
             intent.putExtra("latitude", selectedAgency.getLatitude());
             intent.putExtra("longitude", selectedAgency.getLongitude());
+            intent.putExtra("logo", selectedAgency.getImage());
             startActivity(intent);
         }
     }
