@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProfileFragment#newInstance} factory method to
@@ -64,13 +66,7 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Find the button and set the click listener
-        Button fav_btn = view.findViewById(R.id.Favoritesbutton);
-        fav_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "This feature is not available yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
+
         Button faqs_btn = view.findViewById(R.id.FAQsbutton);
         faqs_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,18 +81,21 @@ public class ProfileFragment extends Fragment {
                 Toast.makeText(getActivity(), "This feature is not available yet.", Toast.LENGTH_SHORT).show();
             }
         });
-        Button settingsbtn = view.findViewById(R.id.Settingsbutton);
-        settingsbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "This feature is not available yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
+
         Button logoutbtn = view.findViewById(R.id.LogOutbutton);
         logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "This feature is not available yet.", Toast.LENGTH_SHORT).show();
+                // Log the user out
+                FirebaseAuth.getInstance().signOut();
+
+                // Redirect to the Login Activity (Login.java)
+                Intent intent = new Intent(getActivity(), Login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+                // Optionally, close the current Activity if you want to prevent returning to it
+                getActivity().finish();
             }
         });
         return view;  // Make sure this is inside the onCreateView method

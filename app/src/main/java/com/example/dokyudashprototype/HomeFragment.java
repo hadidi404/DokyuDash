@@ -6,11 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,6 +67,7 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -64,8 +75,39 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        // Get the TextView by ID
 
-        // START: Code to set up button click listeners
+        TextView emailTextView = view.findViewById(R.id.email);
+        TextView greetingTextView = view.findViewById(R.id.greet);
+        // Get the current user from FirebaseAuth
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        // Get the email of the current user
+        String dynamicEmail = user.getEmail();
+
+        // Dynamically set the email text to the TextView
+        emailTextView.setText(dynamicEmail);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userId = user.getUid();
+        DocumentReference docRef = db.collection("users").document(userId);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        // Get the first name from Firestore
+                        String firstName = document.getString("firstName");
+
+                        // Update the greeting TextView
+                        if (firstName != null) {
+                            greetingTextView.setText("Hi, " + firstName);
+                        } else {
+                            greetingTextView.setText("Hi, User");
+                        }
+                    }
+                }
+            }
+        });
         Button agencyButton = view.findViewById(R.id.agency_button);
         agencyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,38 +131,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Agency Pinboard
-        Button fav1 = view.findViewById(R.id.fav_1);
-        fav1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "No transactions yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        Button fav2 = view.findViewById(R.id.fav_2);
-        fav2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "No transactions yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Button fav3 = view.findViewById(R.id.fav_3);
-        fav3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "No transactions yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Button fav4 = view.findViewById(R.id.fav_4);
-        fav4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "No transactions yet.", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         // Main Features
         Button transactionButton = view.findViewById(R.id.transaction_button);
@@ -141,15 +152,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Button historyButton = view.findViewById(R.id.history_button);
-        historyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), HistoryActivity.class);
-                startActivity(intent);
 
-            }
-        });
         // END: Code to set up button click listeners
 
         return view;

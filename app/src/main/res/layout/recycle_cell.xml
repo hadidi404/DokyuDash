@@ -4,8 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="175dp"
     android:layout_height="150dp"
-    android:background="@drawable/border_shape"
-    android:layout_margin="8dp"> <!-- Add border background -->
+    android:background="@drawable/button_background"
+    android:layout_margin="10dp"
+
+    android:layout_gravity="center"> <!-- Add border background -->
 
     <ImageView
         android:id="@+id/recycleCellImage"

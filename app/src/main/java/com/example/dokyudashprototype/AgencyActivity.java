@@ -34,41 +34,22 @@ public class AgencyActivity extends AppCompatActivity implements RecycleAdapter.
             Recycling dict = new Recycling("1", "DICT", R.drawable.dict, "Cardboard", 16.41681332085707, 120.6136197558936);
             recyclingArrayList.add(dict);
 
-            Recycling csc = new Recycling("2", "CSC", R.drawable.csc, "Paper", 16.402355632725335, 120.60385691280936);
+            Recycling csc = new Recycling("2", "CSC", R.drawable.csc, "Paper", 16.4019, 120.6039);
             recyclingArrayList.add(csc);
 
-            Recycling philhealth = new Recycling("3", "PhilHealth", R.drawable.philhealth, "Paper", 16.41218581798061, 120.60524210809584);
+            Recycling philhealth = new Recycling("3", "PhilHealth", R.drawable.philhealth, "Paper", 16.412118830329092, 120.6052512635245);
             recyclingArrayList.add(philhealth);
 
-            Recycling lto = new Recycling("4", "LTO", R.drawable.lto, "Plastic", 16.4080, 120.5990);
+            Recycling lto = new Recycling("4", "LTO", R.drawable.lto, "Plastic", 16.40706795066215, 120.6016630307616);
             recyclingArrayList.add(lto);
 
-            Recycling prc = new Recycling("5", "PRC", R.drawable.prc, "Glass", 16.4120, 120.6005);
+            Recycling prc = new Recycling("5", "PRC", R.drawable.prc, "Gl   ass", 16.412881800762634, 120.59226746655595);
             recyclingArrayList.add(prc);
 
-            Recycling psa = new Recycling("6", "PSA", R.drawable.psa, "Glass", 16.4115, 120.5955);
+            Recycling psa = new Recycling("6", "PSA", R.drawable.psa, "Glass", 16.40850176521624   , 120.5919845297909);
             recyclingArrayList.add(psa);
-
-            Recycling random = new Recycling("7", "Random Agency 1", R.drawable.psa, "Glass", 16.4090, 120.5940);
-            recyclingArrayList.add(random);
-
-            Recycling fd = new Recycling("8", "Random Agency 2", R.drawable.psa, "Glass", 16.4105, 120.5935);
-            recyclingArrayList.add(fd);
-
-            Recycling sd = new Recycling("9", "Random Agency 3", R.drawable.psa, "Glass", 16.4130, 120.5945);
-            recyclingArrayList.add(sd);
-
-            Recycling rew = new Recycling("10", "Random Agency 4", R.drawable.psa, "Glass", 16.4075, 120.5950);
-            recyclingArrayList.add(rew);
-
-            Recycling as = new Recycling("11", "Random Agency 5", R.drawable.psa, "Glass", 16.4060, 120.5975);
-            recyclingArrayList.add(as);
-
-            Recycling yt = new Recycling("12", "Random Agency 6", R.drawable.psa, "Glass", 16.4085, 120.5980);
-            recyclingArrayList.add(yt);
-
-            Recycling hg = new Recycling("13", "Random Agency 7", R.drawable.psa, "Glass", 16.4100, 120.5965);
-            recyclingArrayList.add(hg);
+            Recycling bir = new Recycling("6", "BIR", R.drawable.bir, "Glass", 16.408678253824103, 120.60102334234585);
+            recyclingArrayList.add(bir);
         }
     }
 
