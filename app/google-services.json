@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264934608054",
+    "project_id": "dokyudash-7521d",
+    "storage_bucket": "dokyudash-7521d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264934608054:android:d2d2d873c68a3f6d152a17",
+        "android_client_info": {
+          "package_name": "com.example.dokyudashprototype"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWlaDxjC-GzrEutqFSjbIqTqV1fab0Bb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
