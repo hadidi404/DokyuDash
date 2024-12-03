@@ -129,7 +129,7 @@ public class Registration extends AppCompatActivity {
 
         // Create a map of user data
         Map<String, Object> userData = new HashMap<>();
-        userData.put("firstName", firstName);
+        userData.put("firstName", userId);
         userData.put("lastName", lastName);
         userData.put("email", email);
         userData.put("password", password);

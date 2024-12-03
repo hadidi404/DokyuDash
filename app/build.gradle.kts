@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.google.gms.google.services)
+
+    id ("com.google.gms.google-services")
 }
 
 android {
@@ -46,25 +47,23 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.camera.view)
-    implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-    implementation(libs.firebase.storage)
+    implementation(libs.play.services.maps)
+    implementation(libs.firebase.database)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.material.v180)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.navigation.ui.ktx)
-    implementation(libs.androidx.constraintlayout)
-    implementation("androidx.core:core:1.8.0")
+    implementation("com.google.firebase:firebase-auth:22.0.0") // Firebase Authentication
+    implementation("com.google.firebase:firebase-storage:20.2.1") // Firebase Storage
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0") // Latest stable version
     implementation("com.google.zxing:core:3.5.3")
-    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
-    implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")  // Check for the latest version
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")  // For Glide's annotations
 
 
 
-    }
+
+}
 
 
